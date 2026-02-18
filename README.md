@@ -1,6 +1,6 @@
 # DSA Daily Progress
 Hi, I'm Bhavya   
-I am consistently practicing Data Structures & Algorithms in Java to strengthen my problem-solving skills for placements.   
+I am consistently practicing Data Structures & Algorithms in Java to strengthen my problem-solving skills for placements.  
 
 # Goals
 - Solve 2–3 problems daily
