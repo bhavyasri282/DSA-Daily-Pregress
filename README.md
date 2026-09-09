@@ -9,5 +9,4 @@ I am consistently practicing Data Structures & Algorithms in Java to strengthen 
 
 # Platforms
 - LeetCode
-- Codeforces
 - GeeksforGeeks
