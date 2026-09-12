@@ -1,0 +1,55 @@
+class Solution {
+    public int nextGreaterElement(int n) {
+        int count = 0;
+        int temp = n;
+        while(temp != 0) {
+            temp = temp / 10;
+            count++;
+        }
+        int[] arr = new int[count];
+        int i = count - 1;
+        while(n > 0) {
+            int digit = n % 10;
+            arr[i] = digit;
+            n = n / 10;
+            i--;
+        }
+        int pos = -1;
+        for(int j = arr.length - 2; j >= 0; j--) {
+            if(arr[j] < arr[j + 1]) {
+                pos = j;
+                break;
+            }
+        }
+        if(pos == -1) {
+            return -1;
+        }
+        int swapIndex = -1;
+        for(int j = arr.length - 1; j > pos; j--) {
+            if(arr[j] > arr[pos]) {
+                swapIndex = j;
+                break;
+            }
+        }
+        int x = arr[pos];
+        arr[pos] = arr[swapIndex];
+        arr[swapIndex] = x;
+        int left = pos + 1;
+        int right = arr.length - 1;
+        while(left < right) {
+            int y = arr[left];
+            arr[left] = arr[right];
+            arr[right] = y;
+            left++;
+            right--;
+        }
+        long ans = 0;
+        for(int j = 0; j < arr.length; j++) {
+            ans = ans * 10 + arr[j];
+        }
+        if(ans > Integer.MAX_VALUE) {
+            return -1;
+        }
+        return (int) ans;
+    }
+}
